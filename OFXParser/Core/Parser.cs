@@ -90,11 +90,11 @@ namespace OFXParser
             // Translating to XML file
             ExportToXml(ofxSourceFile, ofxSourceFile + ".xml");
 
-            // Variáveis úteis para o Parse
+            // Variï¿½veis ï¿½teis para o Parse
             String elementoSendoLido = "";
             Transaction transacaoAtual = null;
 
-            // Variávies utilizadas para a leitura do XML
+            // Variï¿½vies utilizadas para a leitura do XML
             HeaderExtract cabecalho = new HeaderExtract();
             BankAccount conta = new BankAccount();
             Extract extrato = new Extract(cabecalho, conta, "");
@@ -357,7 +357,7 @@ namespace OFXParser
 
                 dateTimeReturned = new DateTime(year, month, day, hour, minute, second);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 extract.ImportingErrors.Add(string.Format("Invalid datetime {0}", ofxDate));
             }
@@ -382,7 +382,7 @@ namespace OFXParser
             {
                 returnValue = Convert.ToDouble(value.Replace('.', ','));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 extract.ImportingErrors.Add(string.Format("Invalid transaction value: {0}", value));
             }
